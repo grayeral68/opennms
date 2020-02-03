@@ -1663,4 +1663,15 @@
         <feature>opennms-graph-domain</feature>
         <bundle>mvn:org.opennms.features.graph.provider/org.opennms.features.graph.provider.persistence-test/${project.version}</bundle>
     </feature>
+
+    <feature name="opennms-bmp-persistence-elastic" description="OpenNMS :: Features :: Persistence :: Elastic" version="${project.version}">
+        <feature>opennms-health</feature>
+        <feature>opennms-jest</feature>
+        <feature version="${netty4Version}">netty4</feature>
+        <bundle>mvn:com.google.guava/guava/${guavaVersion}</bundle>
+        <bundle>mvn:org.mongodb/bson/${bsonVersion}</bundle>
+        <bundle>mvn:org.opennms.features.bmp/org.opennms.features.bmp.api/${project.version}</bundle>
+        <bundle>mvn:org.opennms.features.bmp/org.opennms.features.bmp.elastic/${project.version}</bundle>
+
+    </feature>
 </features>

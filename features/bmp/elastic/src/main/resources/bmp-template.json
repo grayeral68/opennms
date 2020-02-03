@@ -1,0 +1,105 @@
+{
+  "mappings": {
+    "dynamic_templates": [],
+    "properties": {
+      "action": {
+        "type": "keyword"
+      },
+      "sequence": {
+        "type": "long"
+      },
+      "hash": {
+        "type": "keyword"
+      },
+      "router_hash": {
+        "type": "keyword"
+      },
+      "router_ip": {
+        "type": "ip"
+      },
+      "base_attr_hash": {
+        "type": "keyword"
+      },
+      "peer_hash": {
+        "type": "keyword"
+      },
+      "peer_ip": {
+        "type": "ip"
+      },
+      "peer_asn": {
+        "type": "integer"
+      },
+      "timestamp": {
+        "type": "date",
+        "format": "epoch_millis"
+      },
+      "prefix": {
+        "type": "ip"
+      },
+      "length": {
+        "type": "integer"
+      },
+      "is_ipv4": {
+        "type": "boolean"
+      },
+      "origin": {
+        "type": "keyword"
+      },
+      "as_path": {
+        "type": "text"
+      },
+      "as_path_count": {
+        "type": "integer"
+      },
+      "origin_as": {
+        "type": "integer"
+      },
+      "next_hop": {
+        "type": "ip"
+      },
+      "med": {
+        "type": "integer"
+      },
+      "local_pref": {
+        "type": "integer"
+      },
+      "aggregator": {
+        "type": "keyword"
+      },
+      "community_list": {
+        "type": "text"
+      },
+      "ext_community_list": {
+        "type": "text"
+      },
+      "cluster_list": {
+        "type": "text"
+      },
+      "is_atomic_agg": {
+        "type": "boolean"
+      },
+      "is_next_hop_ipv4": {
+        "type": "boolean"
+      },
+      "originator_id": {
+        "type": "keyword"
+      },
+      "path_id": {
+        "type": "integer"
+      },
+      "labels": {
+        "type": "text"
+      },
+      "is_pre_policy": {
+        "type": "boolean"
+      },
+      "is_adj_in": {
+        "type": "boolean"
+      },
+      "large_community_list": {
+        "type": "text"
+      }
+    }
+  },
+  "aliases": {}
+}

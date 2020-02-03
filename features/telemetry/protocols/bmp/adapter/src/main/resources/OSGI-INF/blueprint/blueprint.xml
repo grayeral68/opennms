@@ -12,6 +12,7 @@
 	<reference id="persisterFactory" interface="org.opennms.netmgt.collection.api.PersisterFactory" />
 	<reference id="thresholdingService" interface="org.opennms.netmgt.threshd.api.ThresholdingService" />
 	<reference id="eventForwarder" interface="org.opennms.netmgt.events.api.EventForwarder" />
+    <reference id="bmpRepository" interface="org.opennms.features.bmp.api.BmpRepository" availability="mandatory" />
 
 	<!-- Telemetry Adapter -->
 	<bean id="bmpTelemetryFactory" class="org.opennms.netmgt.telemetry.protocols.bmp.adapter.BmpTelemetryAdapterFactory">
@@ -39,6 +40,18 @@
 		<property name="eventForwarder" ref="eventForwarder" />
 	</bean>
 	<service ref="bmpPeerStatusFactory" interface="org.opennms.netmgt.telemetry.api.adapter.AdapterFactory">
+		<service-properties>
+			<entry key="registration.export" value="true" />
+		</service-properties>
+	</service>
+
+	<!-- Bmp Routes Adapter -->
+	<bean id="bmpRoutesAdapterFactory" class="org.opennms.netmgt.telemetry.protocols.bmp.adapter.routes.BmpRoutesAdapterFactory">
+        <property name="bmpRepository" ref="bmpRepository"/>
+		<property name="telemetryRegistry" ref="telemetryRegistry" />
+	</bean>
+
+	<service ref="bmpRoutesAdapterFactory" interface="org.opennms.netmgt.telemetry.api.adapter.AdapterFactory">
 		<service-properties>
 			<entry key="registration.export" value="true" />
 		</service-properties>
